@@ -1,5 +1,6 @@
 from collections import defaultdict
 from aif360.metrics import ClassificationMetric
+import matplotlib.pyplot as plt
 import numpy as np
 
 privileged_groups = [{'RACE': 1}]
@@ -49,3 +50,27 @@ def describe_metrics(metrics, thresh_arr):
     print("Corresponding statistical parity difference value: {:6.4f}".format(metrics['stat_par_diff'][best_ind]))
     print("Corresponding equal opportunity difference value: {:6.4f}".format(metrics['eq_opp_diff'][best_ind]))
     print("Corresponding Theil index value: {:6.4f}".format(metrics['theil_ind'][best_ind]))
+    
+# Function to plot Bias metrics
+
+def plot(x, x_name, y_left, y_left_name, y_right, y_right_name):
+    fig, ax1 = plt.subplots(figsize=(10,7))
+    ax1.plot(x, y_left)
+    ax1.set_xlabel(x_name, fontsize=16, fontweight='bold')
+    ax1.set_ylabel(y_left_name, color='b', fontsize=16, fontweight='bold')
+    ax1.xaxis.set_tick_params(labelsize=14)
+    ax1.yaxis.set_tick_params(labelsize=14)
+    ax1.set_ylim(0.5, 0.8)
+
+    ax2 = ax1.twinx()
+    ax2.plot(x, y_right, color='r')
+    ax2.set_ylabel(y_right_name, color='r', fontsize=16, fontweight='bold')
+    if 'DI' in y_right_name:
+        ax2.set_ylim(0., 0.7)
+    else:
+        ax2.set_ylim(-0.25, 0.1)
+
+    best_ind = np.argmax(y_left)
+    ax2.axvline(np.array(x)[best_ind], color='k', linestyle=':')
+    ax2.yaxis.set_tick_params(labelsize=14)
+    ax2.grid(True)
