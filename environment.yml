@@ -1,0 +1,9 @@
+name: capstone
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - jupyterlab
+  - imbalanced-learn
+  - tensorflow
+prefix: /opt/anaconda3/envs/capstone

@@ -10,10 +10,11 @@ __pycache__/
 .Python
 build/
 data/
+.DS_Store
 develop-eggs/
 dist/
 downloads/
-.DS_Store
+notebook_historical_versions/
 eggs/
 .eggs/
 lib/
