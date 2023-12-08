@@ -9,4 +9,4 @@ This project consists of a replication of a project using Medical Expenditure Pa
 
 # Running the Project
 - To install the dependencies, run the following command from the root directory of the project: `pip install -r requirements.txt`
-- 
+- Alternatively, an environments.yml file has been provided to reconstruct the specific conda environment used in our work.
