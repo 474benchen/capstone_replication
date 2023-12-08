@@ -1,12 +1,68 @@
-# capstone_replication
-Replication project for Quarter 1 of Capstone - AiF360 usage with MEPS data
+# MEPS Bias Mitigation using AiF360
 
-This project consists of a replication of a project using Medical Expenditure Panel Survey (MEPS) data. We are following the guidance of our mentor throughout the course of this project and are looking to create a clear, complete, and professional deliverable. We will be exploring the MEPS dataset, dissecting fairness metrics, and applying bias mitigation techniques using the AIF360 toolkit.
+## Overview
 
-# Fetching the Data
-- The data files used are stored under the file name of 'data.zip'
-- Unzip the file to create the folder 'data' before running any notebooks
+This repository serves as a case study for applying bias mitigation methods using the AI Fairness 360 (AiF360) toolkit. The primary focus is on addressing biases in the Medical Expenditure Panel Survey (MEPS) dataset. The toolkit is utilized to detect and mitigate biases, providing insights into the potential impacts of bias mitigation techniques in real-world scenarios.
 
-# Running the Project
-- To install the dependencies, run the following command from the root directory of the project: `pip install -r requirements.txt`
-- Alternatively, an environments.yml file has been provided to reconstruct the specific conda environment used in our work.
+## Getting Started
+
+To replicate our environment, you can choose from the following options:
+
+### Option 1: Using requirements.txt
+
+1. Clone the repository and navigate to the project directory:
+
+    ```
+    git clone https://github.com/474benchen/capstone_replication.git
+    cd capstone_replication
+    ```
+
+2. Install the required packages using pip:
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+4. Proceed to the next steps for dataset setup and running the bias mitigation methods.
+
+### Option 2: Reconstructing the Conda Environment
+
+1. Clone the repository and navigate to the project directory:
+
+    ```
+    git clone https://github.com/474benchen/capstone_replication.git
+    cd capstone_replication
+    ```
+
+3. Create a conda environment from the provided environment.yml file:
+
+    ```
+    conda env create -f environment.yml
+    ```
+
+4. Activate the conda environment:
+
+    ```
+    conda activate capstone
+    ```
+
+5. Proceed to the next steps for dataset setup and running the bias mitigation methods.
+
+## Dataset Setup
+
+Before running our notebook, you need to set up the MEPS dataset. We've provided the data in `data.zip`.
+In order to access it, unzip the file into the capstone_replication directory. The created data directory
+should contain 2 csv files, each correlating to data from a MEPS panel.
+
+## Running Bias Mitigation
+
+Once the environment is set up and the dataset is prepared, refer to `replication.ipynb` to explore our work.
+
+## Contributors
+
+- [Benjamin Chen](https://www.linkedin.com/in/474benjaminchen/)
+- [Jayson Leach](https://www.linkedin.com/in/jayson-leach/)
+- [Stephanie Chavez](https://www.linkedin.com/in/stephanie-chavez-000840223/)
+- [Natalie Wu](https://www.linkedin.com/in/natalie-wu5/)
+- [Sam Horio](https://www.linkedin.com/in/samantha-horio/)
+
