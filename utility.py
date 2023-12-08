@@ -7,6 +7,24 @@ privileged_groups = [{'RACE': 1}]
 unprivileged_groups = [{'RACE': 0}]
 
 def test(dataset, model, thresh_arr):
+    """
+    Function to perform a suite of bias metrics on a trained model.
+    test suite includes:
+        1. balanced accuracy
+        2. average odds difference
+        3. disparate impact
+        4. statistical parity difference
+        5. equal opportunity difference
+        6. Theil index
+
+    Args:
+        dataset(StandardDataSet): dataset class of representative data to test.
+        model(sklearn model): model to be tested against.
+        thresh_arr(list): array of thresholds to use in testing.
+
+    Returns:
+        defaultdict of metric names and their values when tested against the provided model.
+    """
     try:
         # sklearn classifier
         y_val_pred_prob = model.predict_proba(dataset.features)
@@ -38,9 +56,19 @@ def test(dataset, model, thresh_arr):
     
     return metric_arrs
 
-# Function to display bias metrics
-
 def describe_metrics(metrics, thresh_arr):
+    """
+    Function to display results of the previous function, test().
+
+    Args:
+        metrics(defaultdict): collection of relevant values according to test().
+        thresh_arr(list): array of thresholds used in testing.
+
+    Returns:
+        None, but prints out the benchmark values for the provided model, according to the
+        results of test().
+        
+    """
     best_ind = np.argmax(metrics['bal_acc'])
     print("Threshold corresponding to Best balanced accuracy: {:6.4f}".format(thresh_arr[best_ind]))
     print("Best balanced accuracy: {:6.4f}".format(metrics['bal_acc'][best_ind]))
@@ -50,10 +78,22 @@ def describe_metrics(metrics, thresh_arr):
     print("Corresponding statistical parity difference value: {:6.4f}".format(metrics['stat_par_diff'][best_ind]))
     print("Corresponding equal opportunity difference value: {:6.4f}".format(metrics['eq_opp_diff'][best_ind]))
     print("Corresponding Theil index value: {:6.4f}".format(metrics['theil_ind'][best_ind]))
-    
-# Function to plot Bias metrics
 
 def plot(x, x_name, y_left, y_left_name, y_right, y_right_name):
+    """
+    Function to plot bias metrics on a dual-axis graph.
+
+    Args:
+        x(iterable): The x-axis data values.
+        x_name(str): Label for the x-axis.
+        y_left(iterable): The left y-axis data values.
+        y_left_name(str): Label for the left y-axis.
+        y_right(iterable): The right y-axis data values.
+        y_right_name(str): Label for the right y-axis.
+
+    Returns:
+        None, but plots a visualization for the results of bias metrics.
+    """
     fig, ax1 = plt.subplots(figsize=(10,7))
     ax1.plot(x, y_left)
     ax1.set_xlabel(x_name, fontsize=16, fontweight='bold')
