@@ -27,6 +27,8 @@ To replicate our environment, you can choose from the following options:
 
 ### Option 2: Reconstructing the Conda Environment
 
+Ensure that you have conda installed before attempting this option. distributions can be found [here](https://www.anaconda.com/download).
+
 1. Clone the repository and navigate to the project directory:
 
     ```

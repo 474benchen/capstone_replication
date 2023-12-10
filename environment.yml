@@ -1,9 +1,9 @@
-name: capstone
+name: capstone-aif360
 channels:
   - defaults
 dependencies:
-  - python=3.9
+  - python=3.9.18
   - jupyterlab
-  - imbalanced-learn
-  - tensorflow
-prefix: /opt/anaconda3/envs/capstone
+  - pip
+  - pip:
+    - -r requirements.txt
