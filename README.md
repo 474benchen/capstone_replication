@@ -44,7 +44,7 @@ Ensure that you have conda installed before attempting this option. distribution
 2. Activate the conda environment:
 
     ```
-    conda activate capstone
+    conda activate capstone-aif360
     ```
 
 3. Proceed to the next steps for dataset setup and running the bias mitigation methods.
