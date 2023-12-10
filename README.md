@@ -6,49 +6,48 @@ This repository serves as a case study for applying bias mitigation methods usin
 
 ## Getting Started
 
-To replicate our environment, you can choose from the following options:
 
-### Option 1: Using requirements.txt
+To replicate our environment, you can choose from the following options. Regardless of which option,
+in order to explore our work:
 
-1. Clone the repository and navigate to the project directory:
+1. Clone the repository:
 
     ```
     git clone https://github.com/474benchen/capstone_replication.git
-    cd capstone_replication
     ```
 
-2. Install the required packages using pip:
+2. Navigate to the project directory:
+
+    ```
+    cd capstone_replication
+    ```
+### Option 1: Using requirements.txt
+
+1. Install the required packages using pip:
 
     ```
     pip install -r requirements.txt
     ```
 
-4. Proceed to the next steps for dataset setup and running the bias mitigation methods.
+2. Proceed to the next steps for dataset setup and running the bias mitigation methods.
 
 ### Option 2: Reconstructing the Conda Environment
 
 Ensure that you have conda installed before attempting this option. distributions can be found [here](https://www.anaconda.com/download).
 
-1. Clone the repository and navigate to the project directory:
-
-    ```
-    git clone https://github.com/474benchen/capstone_replication.git
-    cd capstone_replication
-    ```
-
-3. Create a conda environment from the provided environment.yml file:
+1. Create a conda environment from the provided environment.yml file:
 
     ```
     conda env create -f environment.yml
     ```
 
-4. Activate the conda environment:
+2. Activate the conda environment:
 
     ```
     conda activate capstone
     ```
 
-5. Proceed to the next steps for dataset setup and running the bias mitigation methods.
+3. Proceed to the next steps for dataset setup and running the bias mitigation methods.
 
 ## Dataset Setup
 
